@@ -53,3 +53,9 @@ form button {
     font-size: 18px;
     padding: 0 20px;
 }
+
+.formOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
