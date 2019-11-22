@@ -1,12 +1,13 @@
 import React from 'react';
 
 import './App.css';
-import Login from './Login/index'
+
+import Routes from './routes';
 
 function App() {
   return (
     <>
-      <Login></Login>
+      <Routes/>
     </>
   );
 }
