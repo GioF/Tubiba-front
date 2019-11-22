@@ -25,7 +25,7 @@ export default function Login(){
                     placeholder="daapatinhah123"
                   />
                   <div className="loginOptions">
-                    <button type="submit">Registrar</button>
+                    <button>Registrar</button>
                     <button type="submit">Entrar</button>
                   </div>
                 </form>
