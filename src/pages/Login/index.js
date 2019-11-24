@@ -1,14 +1,14 @@
 import React from 'react';
 
-import './styles.css';
+import { LoginContainer, LoginImageContainer } from './styles';
 
 export default function Login(){
 
     return (
         <>
-        <div className="loginImageContainer">
+        <LoginImageContainer>
       
-            <div className="loginContainer">
+            <LoginContainer>
                 <form>
                   
                   <label htmlFor="email">E-mail</label>
@@ -29,8 +29,8 @@ export default function Login(){
                     <button type="submit">Entrar</button>
                   </div>
                 </form>
-            </div>
-        </div>
+            </LoginContainer>
+        </LoginImageContainer>
         </>
     )
 
