@@ -2,7 +2,8 @@ import React from 'react';
 
 import { MdLibraryBooks, MdDashboard, MdPowerSettingsNew, MdVpnKey } from 'react-icons/md';
 
-import {Container, Sidebar} from './styles';
+import { Container, Sidebar, Content } from './styles';
+import { Routes } from './routes';
 
 export default function Dashboard() {
   return (
@@ -13,6 +14,9 @@ export default function Dashboard() {
         <button> <MdVpnKey size={40} color="#fff" /> </button>
         <button> <MdPowerSettingsNew size={40} color="#fff" /> </button>
       </Sidebar>
+      <Content>
+        <Routes/>
+      </Content>
     </Container>
   );
 }
