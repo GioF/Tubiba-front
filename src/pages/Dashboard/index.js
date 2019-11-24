@@ -3,7 +3,7 @@ import React from 'react';
 import { MdLibraryBooks, MdDashboard, MdPowerSettingsNew, MdVpnKey } from 'react-icons/md';
 
 import { Container, Sidebar, Content } from './styles';
-import { Routes } from './routes';
+import Routes from './routes';
 
 export default function Dashboard() {
   return (
