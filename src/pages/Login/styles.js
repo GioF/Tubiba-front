@@ -19,7 +19,7 @@ export const LoginContainer = styled.div`
     max-width: 420px;
     height: 100%;
     background: #FDFFFC;
-    float: left;
+    float: right;
     flex-direction: column;
     align-items: center;
     padding: 90px 0px;
