@@ -9,10 +9,10 @@ export default function Dashboard() {
   return (
     <Container>
       <Sidebar>
-        <button> <MdDashboard size={40} color="#fff" /> </button>
-        <button> <MdLibraryBooks size={40} color="#fff" /> </button>
-        <button> <MdVpnKey size={40} color="#fff" /> </button>
-        <button> <MdPowerSettingsNew size={40} color="#fff" /> </button>
+        <button> <MdDashboard         size={40} color="#fff" /> </button>
+        <button> <MdLibraryBooks      size={40} color="#fff" /> </button>
+        <button> <MdVpnKey            size={40} color="#fff" /> </button>
+        <button> <MdPowerSettingsNew  size={40} color="#fff" /> </button>
       </Sidebar>
       <Content>
         <Routes/>
