@@ -5,6 +5,9 @@ import { MdLibraryBooks, MdDashboard, MdPowerSettingsNew, MdVpnKey } from 'react
 import { Container, Sidebar, Content } from './styles';
 import Routes from './routes';
 
+//TEMP
+import Exercises from '../../components/Exercises';
+
 export default function Dashboard() {
   return (
     <Container>
@@ -15,6 +18,7 @@ export default function Dashboard() {
         <button> <MdPowerSettingsNew  size={40} color="#fff" /> </button>
       </Sidebar>
       <Content>
+        <Exercises></Exercises>
         <Routes/>
       </Content>
     </Container>

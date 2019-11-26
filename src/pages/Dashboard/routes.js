@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 export default function Routes(){
   return (
     <Switch>
-      <Route />
+      <Route path="/dashboard/exercises" component="" />
       <Route />
       <Route />
     </Switch>
