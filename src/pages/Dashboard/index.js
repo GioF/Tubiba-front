@@ -6,7 +6,8 @@ import { Container, Sidebar, Content } from './styles';
 import Routes from './routes';
 
 //TEMP
-import Exercises from '../../components/Exercises';
+//import Exercises from '../../components/Exercises';
+import ExerciseForm from '../../components/ExerciseForm';
 
 export default function Dashboard() {
   return (
@@ -18,7 +19,7 @@ export default function Dashboard() {
         <button> <MdPowerSettingsNew  size={40} color="#fff" /> </button>
       </Sidebar>
       <Content>
-        <Exercises></Exercises>
+        <ExerciseForm></ExerciseForm>
         <Routes/>
       </Content>
     </Container>

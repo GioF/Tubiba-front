@@ -35,6 +35,11 @@ export const Sidebar = styled.div`
     background: rgba(0, 172, 112, 0.5);
   }
 
+  button:hover {
+    background: rgba(35, 231, 162, 0.5);
+    transition-duration: 200ms;
+  }
+
 `;
 
 export const Content = styled.div `
