@@ -1,24 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  border-left: 3px solid #01D088;
-  border-top: 2px solid #01D088;
-  border-radius: 6px;
-
-  color: #FFF;
-
-  width: 100%;
-  height: 200px;
-
-  header {
-    background-color: #01D088;
-    border-right: 2px solid #fff;
-    padding: 3px 0px;
-
-    display: flex;
-    justify-content: space-between;
-
-    button {
+export const Counter = styled.button`
       margin-right: 5px;
       width: 16px;
 
@@ -30,19 +12,17 @@ export const Container = styled.div`
       color: #fff;
 
       cursor: pointer;
-    }
 
-    button:hover {
+    &:hover {
       background: rgba(35,231,162,0.5);
+      border-radius:16px;
       transition-duration: 200ms;
     }
 
-  }
 `;
 
 export const Selector = styled.div`
   padding-left: 10px;
-
 `;
 
 export const Listing = styled.div`

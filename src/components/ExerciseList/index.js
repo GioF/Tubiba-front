@@ -1,19 +1,20 @@
 import React from 'react';
 
-import { Container, Selector, Listing, Difficulty, Date, Title } from './styles';
+import { Selector, Counter, Listing, Difficulty, Date, Title } from './styles';
+import DashboardCard from '../DashboardCard';
 
 export default function ExerciseList() {
   return (
-    <Container>
-      <header>
+    <DashboardCard 
+      title={
+        <>
         <Selector>
           <p>Matéria</p>
         </Selector>
-        <button>2</button> 
-        
-      </header>
-
-      <Listing>
+        <Counter>2</Counter> 
+        </>
+      }>
+        <Listing>
           <Title>
             Título
           </Title>
@@ -47,7 +48,6 @@ export default function ExerciseList() {
           </li>
         </ul>
       </Listing>
-
-    </Container>
+      </DashboardCard>
   );
 }
