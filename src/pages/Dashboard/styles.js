@@ -49,6 +49,10 @@ export const Content = styled.div `
   position: fixed;
 
   width: 100%;
+  max-width: calc(100% - 90px);
   height: 100%;
+  max-height: 100%;
+
+
   left: +90px;
 `;
