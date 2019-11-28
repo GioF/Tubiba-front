@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  border-left: 3px solid #01D088;
-  border-top: 2px solid #01D088;
+  border: 2px solid #01D088;
   border-radius: 6px;
 
   color: #FFF;
@@ -11,7 +10,7 @@ export const Container = styled.div`
 
   header {
     background-color: #01D088;
-    border-right: 2px solid #fff;
+    border-radius: 3px 3px 0px 0px;
     padding: 3px 0px;
 
     display: flex;
