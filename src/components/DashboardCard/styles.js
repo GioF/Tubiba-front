@@ -12,8 +12,7 @@ export const Container = styled.div`
   header {
     background-color: #01D088;
     border-radius: 6px 6px 0px 0px;
-    padding: 3px 0px;
-    padding-left: 10px;
+    padding: 3px 2px 3px 10px;
 
     display: flex;
     justify-content: space-between;
