@@ -22,12 +22,11 @@ export const Counter = styled.button`
 `;
 
 export const Selector = styled.div`
-  padding-left: 10px;
+  
 `;
 
 export const Listing = styled.div`
   color: #acacac;
-  padding-right: 2px;
 
   height: calc(100% - 10px - 13px);
 
