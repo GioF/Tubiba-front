@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Container, Card, MainContent, ExerciseHeader, Primer, Tags } from './styles';
 
-export default function Exercises() {
+export default function Exercises(props) {
   return (
-    <Container>
+    <Container selectedArea={props.selectedArea} >
       <Card>
         <MainContent>
           <ExerciseHeader>

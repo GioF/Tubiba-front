@@ -4,6 +4,8 @@ export const Container = styled.div`
   border: 1px solid #4287F5;
   border-radius: 6px;
   width:90%;
+
+  grid-area: ${props => props.selectedArea};
 `;
 
 export const Card = styled.div`
