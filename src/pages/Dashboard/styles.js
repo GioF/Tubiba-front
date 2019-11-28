@@ -55,4 +55,12 @@ export const Content = styled.div `
 
 
   left: +90px;
+
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "st gr"
+                       "ex ex"
+
 `;
