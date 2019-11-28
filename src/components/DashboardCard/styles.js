@@ -8,7 +8,6 @@ export const Container = styled.div`
   color: #FFF;
 
   width: 100%;
-  height: 200px;
 
   header {
     background-color: #01D088;
