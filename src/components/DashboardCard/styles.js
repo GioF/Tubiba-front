@@ -6,6 +6,7 @@ export const Container = styled.div`
   border-radius: 6px;
   */
   color: #FFF;
+  background-color: #01d08824;
 
   width: 100%;
 
