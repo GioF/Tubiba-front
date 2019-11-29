@@ -43,7 +43,7 @@ export const Sidebar = styled.div`
 `;
 
 export const Content = styled.div `
-  padding: 50px;
+  padding: 20px 40px;
 
   float: right;
   position: fixed;
@@ -57,7 +57,7 @@ export const Content = styled.div `
   left: +90px;
 
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 10px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas: "st gr"
