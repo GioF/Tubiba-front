@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /*
-  border: 2px solid #01D088;
-  border-radius: 6px;
-  */
-  color: #FFF;
-  background-color: #01d08824;
+  border: 3px solid #01D088;
+  border-radius: 24px;
+
+  color: #000;
+  
+  grid-area: ${props => props.gridArea};
 
   width: 100%;
+  max-height:100%;
 
   header {
-    background-color: #01D088;
-    border-radius: 6px 6px 0px 0px;
-    padding: 3px 2px 3px 10px;
+    font-size: 16px;
+    padding: 18px 18px 12px 18px;
 
     display: flex;
     justify-content: space-between;
@@ -23,5 +23,5 @@ export const Container = styled.div`
 export const Content = styled.div`
   color: #acacac;
 
-  height: calc(100% - 10px - 13px);
+  height: calc(100%);
 `;
