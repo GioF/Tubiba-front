@@ -30,10 +30,3 @@ export const Content = styled.div `
                        "ex ex"
 
 `;
-
-export const Horizontally = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 100%;
-`;
