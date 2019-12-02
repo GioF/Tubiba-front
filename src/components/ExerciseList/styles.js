@@ -1,64 +1,78 @@
 import styled from 'styled-components';
 
-export const Counter = styled.button`
-      margin-right: 5px;
-      width: 16px;
+export const Container = styled.li`
+  background-color: #fff;
 
-      border: 0px;
-      border-radius: 6px;
-      
-      background-color: rgba(0,172,112,0.8);
+  color: #000;
 
-      color: #fff;
+  border-radius: 20px;
 
-      cursor: pointer;
+  padding: 20px;
+  display: grid;
 
-    &:hover {
-      background: rgba(35,231,162,0.5);
-      border-radius:16px;
-      transition-duration: 200ms;
-    }
+  scroll-snap-align: center;
 
-`;
+  & > * {
+    grid-column: 2 / -2;
+  }
 
-export const Selector = styled.div`
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: 1fr 6fr;
+  grid-template-areas: "  title    id  "  
+                       "question status";
+
   
 `;
 
-export const Listing = styled.div`
-  color: #acacac;
+export const Listing = styled.ul`
+  background-color: #01D088;
 
-  height: calc(100% - 10px - 13px);
+  list-style: none;
 
-  button {
-    border: 0px;
-    background: #dcdcdc;
-    text-align: left;
-    padding: 4px;
-  }
+  grid-template-rows: minmax(150px, 1fr);
 
-  ul {
-    flex-direction: column;
-    overflow: auto;
-    height: calc(100% - 10px - 13px);
-  }
+  display: grid;
 
-  li {
-    display: flex;
-    flex-direction: row;
-    padding: 4px;
-  }
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, calc(50%));
+  grid-template-rows: minmax(150px, 1fr);
 
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+
+  padding: 10px;
 `;
 
-export const Title = styled.button`
-  width: 60%;
+export const Title = styled.div`
+
+  grid-area: title;
+
+  h1 {
+    font-size: 12px;
+  }
 `;
 
-export const Date = styled.button`
-  width: 20%;
+export const Question = styled.div`
+  grid-area: question;
+  font-size: 12px;
+  margin-top:auto;
 `;
 
-export const Difficulty = styled.button`
-  width: 20%;
+export const Identification = styled.div`
+  grid-area: id;
+  margin-left: auto;
+`;
+
+export const Status = styled.div`
+  width: 20px;
+  height: 20px;
+
+  background-color:${props => props.status + 'D5'};
+
+  border-radius: 10px;
+
+  margin-top: auto;
+  margin-left: auto;
+
+  grid-area: status;
 `;
