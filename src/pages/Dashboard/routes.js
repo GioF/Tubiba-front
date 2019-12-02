@@ -5,6 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import Statistics from '../../components/Statistics';
 import Notifications from '../../components/Notifications';
 import SolvedExercise from '../../components/SolvedExercise';
+import ExerciseList from '../../components/ExerciseList';
+import Exercises from '../../components/Exercises';
 // import  from '../../components/'
 // import  from '../../components/'
 // import  from '../../components/'
@@ -15,7 +17,8 @@ export default function Routes(){
       <Route path="/dashboard/statistics" component={Statistics}/>
       <Route path="/dashboard" exact      component={Notifications}/>
       <Route path="/dashboard/exercises"  component={SolvedExercise}/>
-      <Route />
+      <Route path="/dashboard/teacher"    component={ExerciseList}/>
+      <Route path="/dashboard/exercise"   component={Exercises}/>
       <Route />
     </Switch>
   ) 
