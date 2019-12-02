@@ -5,6 +5,7 @@ import DashboardCard from '../DashboardCard';
 import { Chart } from '@bit/primefaces.primereact.chart';
 
 import {Horizontally} from './styles';
+import ExerciseList from '../ExerciseList';
 
 export default function Statistics() {
 
@@ -52,26 +53,9 @@ export default function Statistics() {
     }]
   };
 
-  const medianPerformance = {
-    datasets: [
-      {
-        data: [11, 16, 7, 3, 14],
-        backgroundColor: ['#FF6384', '#4BC0C0', '#FFCE56', '#E7E9ED', '#36A2EB'],
-        label: 'matérias a estudar'
-      }
-    ],
-    labels: ['geometria plana', 'geometria espacial', 'circumferências', 'radiciação', 'multiplicativas']
-  };
-
-  const options = {
-    legend: {
-      display: false
-    }
-  };
-
   return (
     <>
-    <TitleCard gridArea="tit">Dashboard - matemática</TitleCard>
+    <TitleCard gridArea="tit1">Dashboard - matemática</TitleCard>
         <DashboardCard title="Estatísticas gerais" gridArea="st">
           <Chart
             type='pie'
@@ -80,27 +64,19 @@ export default function Statistics() {
           />
         </DashboardCard>
 
-        <DashboardCard title="Notas" gridArea="gr" >
-          <Chart
-            type='line'
-            data={noteData}
-            options={{legend: {position:'bottom'}}}
-            height="100%"
-          />
-        </DashboardCard>
+        <ExerciseList gridArea="gr"/>
 
         <DashboardCard title="Comparativos" gridArea="ex">
           <Horizontally>
             <Chart
               type='radar'
-              data={selfPerformance}  
-              width="30%"
+              data={selfPerformance} 
             />
             <Chart
-              type='doughnut'
-              data={medianPerformance}
-              options={options}
-              width="30%"
+            type='line'
+            data={noteData}
+            options={{legend: {position:'bottom'}}}
+            style={{margintop: 'auto'}}
             />
           </Horizontally>
         </DashboardCard>
