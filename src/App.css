@@ -59,12 +59,12 @@ button {
   border: 0;
   border-radius: 6px;
   background: #00b24a;
-  height: 30px;
+  height: 42px;
   width: calc(30px * 2.8);
   cursor: pointer;
   color: #fff;
   font-size: 18px;
-  padding: 0 20px;
+  padding: auto;
 }
 
 form button:hover {
