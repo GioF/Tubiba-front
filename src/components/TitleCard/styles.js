@@ -10,5 +10,5 @@ export const Container = styled.div`
   text-justify: center;
 
   padding: 10px;
-  
+  max-height:513px;
 `;
