@@ -3,7 +3,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Statistics from '../../components/Statistics';
-// import  from '../../components/'
+import Notifications from '../../components/Notifications';
+import SolvedExercise from '../../components/SolvedExercise';
 // import  from '../../components/'
 // import  from '../../components/'
 // import  from '../../components/'
@@ -11,7 +12,9 @@ import Statistics from '../../components/Statistics';
 export default function Routes(){
   return (
     <Switch>
-      <Route path="/dashboard/statistics" component={Statistics} />
+      <Route path="/dashboard/statistics" component={Statistics}/>
+      <Route path="/dashboard" exact      component={Notifications}/>
+      <Route path="/dashboard/exercises"  component={SolvedExercise}/>
       <Route />
       <Route />
     </Switch>
