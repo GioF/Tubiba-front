@@ -10,15 +10,15 @@ import Exercise from '../../components/Exercise';
 import ExerciseForm from '../../components/ExerciseForm';
 // import  from '../../components/'
 
-export default function Routes({displayFunc}){
+export default function Routes({displayGrid}){
   return (
-    <Switch> 
-      <Route path="/dashboard/statistics"   render={(props) => <Statistics    displayFunc={displayFunc} />}/>
-      <Route path="/dashboard" exact        render={(props) => <Notifications displayFunc={displayFunc} />}/>
-      <Route path="/dashboard/exercises"    render={(props) => <SolvedExercise displayFunc={displayFunc} />}/>
-      <Route path="/dashboard/teacher"      render={(props) => <ExerciseList displayFunc={displayFunc} />}/>
-      <Route path="/dashboard/exercise"     render={(props) => <Exercise displayFunc={displayFunc} />}/>
-      <Route path="/dashboard/exerciseform" render={(props) => <ExerciseForm displayFunc={displayFunc} />}/>
+    <Switch > 
+      <Route path="/dashboard/statistics"   render={(props) => <Statistics      {...props} displayGrid={displayGrid} />}/>
+      <Route path="/dashboard" exact        render={(props) => <Notifications   {...props} displayGrid={displayGrid} />}/>
+      <Route path="/dashboard/exercises"    render={(props) => <SolvedExercise  {...props} displayGrid={displayGrid} />}/>
+      <Route path="/dashboard/teacher"      render={(props) => <ExerciseList    {...props} displayGrid={displayGrid} />}/>
+      <Route path="/dashboard/exercise"     render={(props) => <Exercise        {...props} displayGrid={displayGrid} />}/>
+      <Route path="/dashboard/exerciseform" render={(props) => <ExerciseForm    {...props} displayGrid={displayGrid} />}/>
     </Switch>
   ) 
 }

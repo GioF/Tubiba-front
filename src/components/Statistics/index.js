@@ -11,7 +11,7 @@ export default function Statistics(props) {
 
   //temporary data; when api connection is done, manual json data won't be needed
 
-  props.displayFunc(false);
+  props.displayGrid(true);
 
   const presenceData = {
     labels: ['Presente', 'Abstenção justificada', 'Falta'],

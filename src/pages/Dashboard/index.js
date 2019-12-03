@@ -12,7 +12,7 @@ export default function Dashboard() {
     <Container>
       <Sidebar/>
       <Content displayGrid={displayGrid}>
-        <Routes displayFunc={setDisplayGrid}/>
+        <Routes displayGrid={setDisplayGrid}/>
       </Content>
     </Container>
   );

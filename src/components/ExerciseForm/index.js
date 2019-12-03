@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 import { Container, Titling, InputWrapper, Question, Answers } from './styles';
 
-export default function ExerciseForm() {
+export default function ExerciseForm(props) {
+
+  props.displayGrid(false);
 
   const [title, setTitle] = useState('');
   const [tags, setTags] = useState([]);
