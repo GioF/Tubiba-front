@@ -65,5 +65,8 @@ export const Question = styled.div`
 `;
 
 export const Answers = styled.div`
-
+  li {
+    list-style: none;
+    margin: 0px;
+  }
 `;

@@ -7,19 +7,18 @@ import Notifications from '../../components/Notifications';
 import SolvedExercise from '../../components/SolvedExercise';
 import ExerciseList from '../../components/ExerciseList';
 import Exercise from '../../components/Exercise';
-// import  from '../../components/'
-// import  from '../../components/'
+import ExerciseForm from '../../components/ExerciseForm';
 // import  from '../../components/'
 
 export default function Routes(){
   return (
     <Switch>
-      <Route path="/dashboard/statistics" component={Statistics}/>
-      <Route path="/dashboard" exact      component={Notifications}/>
-      <Route path="/dashboard/exercises"  component={SolvedExercise}/>
-      <Route path="/dashboard/teacher"    component={ExerciseList}/>
-      <Route path="/dashboard/exercise"   component={Exercise}/>
-      <Route />
+      <Route path="/dashboard/statistics"   component={Statistics}/>
+      <Route path="/dashboard" exact        component={Notifications}/>
+      <Route path="/dashboard/exercises"    component={SolvedExercise}/>
+      <Route path="/dashboard/teacher"      component={ExerciseList}/>
+      <Route path="/dashboard/exercise"     component={Exercise}/>
+      <Route path="/dashboard/exerciseform" component={ExerciseForm}/>
     </Switch>
   ) 
 }

@@ -21,12 +21,12 @@ export const Content = styled.div `
 
   left: +90px;
 
-  display: grid;
+  /* display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 3fr 4fr;
   grid-template-areas: 'tit1 gr'
                        'st gr'
-                       'ex ex' 
+                       'ex ex'  */
 
 `;
