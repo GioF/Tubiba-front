@@ -21,6 +21,7 @@ export const Container = styled.li`
   grid-template-areas: "  title    id  "  
                        "question status";
 
+  cursor: pointer;
   
 `;
 

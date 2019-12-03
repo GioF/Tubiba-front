@@ -16,7 +16,7 @@ export const Overlay = styled.div`
 
   backdrop-filter: blur(4px);
 
-  display: ${props => props.display ? 'flex' : 'none'};
+  display: ${props => props.display};
   flex-direction: column;
   justify-content: center;
 `;
@@ -61,14 +61,17 @@ export const Container = styled.div`
     font-weight: bold;
   }
 
+  button {
+    margin-top: auto;
+  }
 
 `;
 
-export const Answer = styled.div`
-  margin: 20px 0px;
-  width: 100%;
-  height: 100%;
-`;
+// export const Answer = styled.div`
+//   margin: 20px 0px;
+//   width: 100%;
+//   height: 100%;
+// `;
 
 export const Options = styled.div`
   display: flex;
@@ -90,37 +93,41 @@ export const Options = styled.div`
   }
 `;
 
-export const Grading = styled.button`
-  background-color: ${props => props.btncolor};
-
-  visibility: ${props => props.display};
-
-  &:hover {
-    background-color: ${props => props.btncolor + 'A5'};
-    transition-duration: 300ms;
-  }
-
+export const Option = styled.input`
+  margin: auto 0px;
+  margin-top: auto;
 `;
 
-export const Justificatory = styled.textarea`
-  background-color: ${props => props.background};
+// export const Justificatory = styled.textarea`
+//   background-color: ${props => props.background};
 
-  position: absolute;
-  visibility: ${props => props.display};
+//   position: absolute;
+//   visibility: ${props => props.display};
 
-  border-radius: 12px;
-  border: 0px;
+//   border-radius: 12px;
+//   border: 0px;
 
-  padding: 20px;
+//   padding: 20px;
 
-  height:100%;
-  width: 100%;
+//   height:100%;
+//   width: 100%;
 
-  resize: none;
+//   resize: none;
 
-`;
+// `;
 
 export const Fill = styled.div`
   width: 100%;
   height: 100%;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  padding: 5px 0px;
+
+  label {
+    font-weight: normal;
+  }
 `;

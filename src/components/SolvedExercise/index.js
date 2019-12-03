@@ -25,7 +25,7 @@ export default function SolvedExercise(props) {
   }
 
   return (
-    <Overlay>
+    <Overlay display={props.display}>
       <Container>
         <h1>
           {props.data.question ? props.data.question : "teste"}
