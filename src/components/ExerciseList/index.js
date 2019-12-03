@@ -19,7 +19,7 @@ export default function ExerciseList(props) {
     ]
   };
 
-  const [overlay, setOverlay] = useState('flex');
+  const [overlay, setOverlay] = useState('none');
 
   return (
     <DashboardCard 

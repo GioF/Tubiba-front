@@ -7,9 +7,11 @@ import { Chart } from '@bit/primefaces.primereact.chart';
 import {Horizontally} from './styles';
 import ExerciseList from '../ExerciseList';
 
-export default function Statistics() {
+export default function Statistics(props) {
 
   //temporary data; when api connection is done, manual json data won't be needed
+
+  props.displayFunc(false);
 
   const presenceData = {
     labels: ['Presente', 'Abstenção justificada', 'Falta'],
