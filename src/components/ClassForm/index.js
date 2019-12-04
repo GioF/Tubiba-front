@@ -17,7 +17,6 @@ export default function ClassForm(props) {
 
     if(descriptor !== '' && subject !== '' && number !== ''){
       const _id = localStorage.getItem('user');
-      console.log(_id);
       await api.post('/classes', {descriptor, subject, number}, { headers: { _id } });
 
       setDescriptor('');
@@ -26,9 +25,19 @@ export default function ClassForm(props) {
     }
   }
 
+  async function handleAddClass(event){
+    event.preventDefault();
+    props.undo(false);
+
+    const _id = localStorage.getItem('user');
+    const res = await api.post('/classes/append', {number}, {headers: {_id}});
+    console.log(res);
+  }
+
   return (
     <Overlay shouldDisplay={props.display}>
       <Container>
+      {props.userType==='Professor' ? 
         <form onSubmit={handleSubmit}>
         <input 
           type="text"
@@ -48,9 +57,21 @@ export default function ClassForm(props) {
           onChange={event => setNumber(event.target.value)}
           placeholder="Um identificador pessoal Ex. 321A"
         />       
-          <button onClick={handleSubmit}>Enviar</button>
+          <button type="submit">Enviar</button>
           </form>
-      </Container>
+      
+      : 
+        <form onSubmit={handleAddClass}>
+        <input 
+          type="text"
+          value={number}
+          onChange={event => setNumber(event.target.value)}
+          placeholder="Insira o número da sala"
+        />
+        <button type="submit">Adicionar</button>
+        </form>
+      }
+      </Container> 
     </Overlay>
   );
 }

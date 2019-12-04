@@ -12,6 +12,7 @@ export const Container = styled.li`
 
   scroll-snap-align: center;
 
+
   & > * {
     grid-column: 2 / -2;
   }
@@ -43,7 +44,7 @@ export const Listing = styled.ul`
 
   padding: 10px;
 
-  height: 100%;
+  height: calc(100% - 5px);
 `;
 
 export const Teacher = styled.div`

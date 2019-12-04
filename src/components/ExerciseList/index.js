@@ -3,7 +3,7 @@ import { MdAdd } from 'react-icons/md';
 
 import api from '../../services/api';
 
-import { Container, Listing, Title, Identification, Question, Status, Add } from './styles';
+import { Container, Listing, Title, Question, Add } from './styles';
 import DashboardCard from '../DashboardCard';
 import Exercise from '../Exercise';
 import ExerciseForm from '../ExerciseForm';
@@ -12,8 +12,8 @@ export default function ExerciseList(props) {
 
 
   const [type, setType] = useState();
-  const [exercises, setExercises] = useState();
-
+  const [exercises, setExercises] = useState([]);
+  
   useEffect(() => {
     async function getType(){
       const _id = localStorage.getItem('user');
@@ -26,11 +26,11 @@ export default function ExerciseList(props) {
   useEffect(() => {
     async function getExercises(){
       const _id = localStorage.getItem('user');
-      const res = await api.get('', {headers: {_id}});
+      const res = await api.get(`/classes/${props.classId}/assignments`, {headers: {_id}});
       setExercises(res.data);
     }
     getExercises();
-  },[]);
+  },[props]);
 
   const data = {
     title: 'Como sonegar impostos sem ser pego?',
@@ -45,7 +45,7 @@ export default function ExerciseList(props) {
     ]
   };
 
-  const [formOverlay, setFormOverlay] = useState(true);
+  const [formOverlay, setFormOverlay] = useState(false);
   const [exerciseOverlay, setExerciseOverlay] = useState(false);
 
   return (
@@ -60,67 +60,21 @@ export default function ExerciseList(props) {
       >
         <Exercise shouldDisplay={exerciseOverlay} undo={setExerciseOverlay} data={data}/>
         <ExerciseForm shouldDisplay={formOverlay} undo={setFormOverlay} classId={props.classId}/>
-        <Listing>
-          <Container onClick={() => setExerciseOverlay(!exerciseOverlay)}>
+        <Listing listSize={exercises.length}>
+          {exercises.map((exercise, i)=><Container key={i}onClick={() => setExerciseOverlay(!exerciseOverlay)}>
             <Title>
               <h1>
-                {data.title}
+                {exercise.title}
               </h1>
             </Title>
 
-            <Identification>
-              {data.identification}
-            </Identification>
-
             <Question>
               <p>
-                {data.question}
+                {exercise.question}
               </p>
             </Question>
-
-            <Status status={data.status}/>
                 
-          </Container>  
-          <Container>
-            <Title>
-              <h1>
-                {data.title}
-              </h1>
-            </Title>
-
-            <Identification>
-              {data.identification}
-            </Identification>
-
-            <Question>
-              <p>
-                {data.question}
-              </p>
-            </Question>
-
-            <Status status={data.status}/>
-                
-          </Container>  
-          <Container>
-            <Title>
-              <h1>
-                {data.title}
-              </h1>
-            </Title>
-
-            <Identification>
-              {data.identification}
-            </Identification>
-
-            <Question>
-              <p>
-                {data.question}
-              </p>
-            </Question>
-
-            <Status status={data.status}/>
-                
-          </Container>  
+          </Container>  )}
         </Listing>
       </DashboardCard>
   );

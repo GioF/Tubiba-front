@@ -30,18 +30,19 @@ export const Listing = styled.ul`
 
   list-style: none;
 
-  grid-template-rows: minmax(150px, 1fr);
-
   display: grid;
 
   grid-gap: 10px;
-  grid-template-columns: repeat(6, calc(50%));
+  grid-template-columns: repeat(${props => props.listSize}, calc(50%));
   grid-template-rows: minmax(150px, 1fr);
 
   overflow-x: scroll;
   scroll-snap-type: x proximity;
 
   padding: 10px;
+
+  height: 100%;
+  max-width: 570px;
 `;
 
 export const Title = styled.div`
@@ -56,26 +57,6 @@ export const Title = styled.div`
 export const Question = styled.div`
   grid-area: question;
   font-size: 12px;
-  margin-top:auto;
-`;
-
-export const Identification = styled.div`
-  grid-area: id;
-  margin-left: auto;
-`;
-
-export const Status = styled.div`
-  width: 20px;
-  height: 20px;
-
-  background-color:${props => props.status + 'D5'};
-
-  border-radius: 10px;
-
-  margin-top: auto;
-  margin-left: auto;
-
-  grid-area: status;
 `;
 
 export const Add = styled.button`

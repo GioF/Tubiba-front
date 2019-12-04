@@ -39,6 +39,7 @@ export default function ClassList(props) {
       const res = await api.get('/classes', {
         headers: { _id }
       });
+      console.log(res.data);
       setClasses(res.data);
     }
 
@@ -57,27 +58,27 @@ export default function ClassList(props) {
       title={
         <>
         <p>Turmas</p>
-        {type==='Professor' ? <Add onClick={() => setOverlay(!overlay)}><MdAdd size="15"/></Add> : <></>}
+        <Add onClick={() => setOverlay(!overlay)}><MdAdd size="15"/></Add>
         </>
       }
       gridArea={props.gridArea}
       >
-        <ClassForm display={overlay} undo={setOverlay} data={data}/>
+        <ClassForm display={overlay} undo={setOverlay} data={data} userType={type}/>
         <Listing>
-          {classes.map( (_class, i) => <Container key={i} onClick={() => gotoClass(i)}>
+          {classes.map( (classroom, i) => <Container key={i} onClick={() => gotoClass(i)}>
             <Teacher>
               <h1>
-                {_class.teacher}
+                teste
               </h1>
             </Teacher>
 
             <ClassNumber>
-              {_class.number}
+              teste
             </ClassNumber>
 
             <Descriptor>
               <p>
-                {_class.descriptor}
+                teste
               </p>
             </Descriptor>
                 
