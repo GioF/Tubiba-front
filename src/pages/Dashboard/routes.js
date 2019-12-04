@@ -13,7 +13,7 @@ import ExerciseForm from '../../components/ExerciseForm';
 export default function Routes({displayGrid}){
   return (
     <Switch > 
-      <Route path="/dashboard/statistics"   render={(props) => <Statistics      {...props} displayGrid={displayGrid} />}/>
+      <Route path="/dashboard/all"   render={(props) => <Statistics      {...props} displayGrid={displayGrid} />}/>
       <Route path="/dashboard" exact        render={(props) => <Notifications   {...props} displayGrid={displayGrid} />}/>
       <Route path="/dashboard/exercises"    render={(props) => <SolvedExercise  {...props} displayGrid={displayGrid} />}/>
       <Route path="/dashboard/teacher"      render={(props) => <ExerciseList    {...props} displayGrid={displayGrid} />}/>
