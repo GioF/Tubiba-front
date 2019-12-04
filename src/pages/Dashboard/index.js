@@ -8,6 +8,10 @@ import Routes from './routes';
 export default function Dashboard({ history }) {
   const [displayGrid, setDisplayGrid] = useState('');
 
+  if(!(localStorage.getItem('user'))){
+    history.push('/');
+  }
+
   return (
     <Container>
       <Sidebar history={history}/>
