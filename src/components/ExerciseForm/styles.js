@@ -1,12 +1,33 @@
 import styled from 'styled-components';
 
+export const Overlay = styled.div`
+background-color: #01D08870;
+
+position: fixed;
+
+height: 100%;
+width: 100%;
+
+z-index: 2000;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+
+backdrop-filter: blur(4px);
+
+display: ${props => props.shouldDisplay ? 'flex' : 'none'};
+flex-direction: column;
+justify-content: center;
+`;
+
 export const Container = styled.div`
   padding: 20px;
-  border: 1px solid #A7A3A3;
-  border-radius: 6px;
-  width:90%;
-  height: 100%;
-  color: #6F6F6F;
+  border-radius: 20px;
+  width:80%;
+  margin: auto;
+  
+  background-color: #fff;
 
   form {
     height: 100%;

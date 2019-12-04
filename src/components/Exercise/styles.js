@@ -16,7 +16,7 @@ export const Overlay = styled.div`
 
   backdrop-filter: blur(4px);
 
-  display: ${props => props.display};
+  display: ${props => props.shouldDisplay ? 'flex' : 'none'};
   flex-direction: column;
   justify-content: center;
 `;

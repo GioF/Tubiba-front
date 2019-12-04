@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
+import api from '../../services/api';
 
 import TitleCard from '../TitleCard';
 import DashboardCard from '../DashboardCard';
@@ -8,6 +9,16 @@ import {Horizontally} from './styles';
 import ExerciseList from '../ExerciseList';
 
 export default function Statistics(props) {
+
+  const [classroom, setClassroom] = useState(null);
+
+  useEffect(() => {
+    async function getClassroom(){
+      const res = await api.get(`/classes/${props.match.params.id}`);
+      setClassroom(res.data);
+    }
+    getClassroom();
+  }, [props]);
 
   //temporary data; when api connection is done, manual json data won't be needed
 
@@ -57,7 +68,7 @@ export default function Statistics(props) {
 
   return (
     <>
-    <TitleCard gridArea="tit1">Dashboard - matemática</TitleCard>
+        <TitleCard gridArea="tit1">Dashboard - {classroom ? classroom.subject : 'nah'}</TitleCard>
         <DashboardCard title="Estatísticas gerais" gridArea="st">
           <Chart
             type='pie'
@@ -66,7 +77,7 @@ export default function Statistics(props) {
           />
         </DashboardCard>
 
-        <ExerciseList gridArea="gr"/>
+        <ExerciseList gridArea="gr" classroomState={classroom} classId={props.match.params.id}/>
 
         <DashboardCard title="Comparativos" gridArea="ex">
           <Horizontally>

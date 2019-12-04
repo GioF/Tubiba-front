@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import api from '../../services/api';
 
 import { LoginContainer, LoginImageContainer } from './styles';
 
@@ -7,10 +8,19 @@ export default function Login({ history }){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleLogin(event){
+  async function handleLogin(event){
     event.preventDefault();
+
     if(email !== '' && password !== ''){
+
+      const res = await api.post('/user/login', {email, password});
+      const _id = res.data;
+      console.log({email, password, res});
+
+      localStorage.setItem('user', _id);
+
       history.push('/dashboard/statistics');
+
     }
   };
 
@@ -37,7 +47,7 @@ export default function Login({ history }){
                   onChange={event => setPassword(event.target.value)}
                 />
                 <div className="formOptions">
-                  <button>Registrar</button>
+                  <button onClick={() => history.push('/register')}>Registrar</button>
                   <button type="submit">Entrar</button>
                 </div>
               </form>

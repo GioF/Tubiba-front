@@ -11,7 +11,7 @@ export default function Sidebar({history}) {
       <button onClick={() => history.push('/dashboard/all')}>  <MdDashboard         size={40} color="#fff" /> </button>
       <button onClick={() => history.push('/dashboard/')}>   <MdLibraryBooks      size={40} color="#fff" /> </button>
       <button onClick={() => history.push('/dashboard/teacher')}>     <MdVpnKey            size={40} color="#fff" /> </button>
-      <button onClick={() => history.push('/')}>                      <MdPowerSettingsNew  size={40} color="#fff" /> </button>
+      <button onClick={() => {localStorage.removeItem('user');history.push('/');}}><MdPowerSettingsNew  size={40} color="#fff" /> </button>
     </Container>
   );
 }

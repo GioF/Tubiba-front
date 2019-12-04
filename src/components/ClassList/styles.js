@@ -16,7 +16,7 @@ export const Container = styled.li`
     grid-column: 2 / -2;
   }
 
-  grid-template-columns: 6fr 1fr;
+  grid-template-columns: 6fr 2fr;
   grid-template-rows: 1fr 6fr;
   grid-template-areas: "  title    id  "  
                        "question status";
@@ -34,7 +34,7 @@ export const Listing = styled.ul`
 
   display: grid;
 
-  grid-gap: 10px;
+  grid-gap: 30px;
   grid-template-columns: repeat(6, calc(50%));
   grid-template-rows: minmax(150px, 1fr);
 
@@ -42,40 +42,28 @@ export const Listing = styled.ul`
   scroll-snap-type: x proximity;
 
   padding: 10px;
+
+  height: 100%;
 `;
 
-export const Title = styled.div`
+export const Teacher = styled.div`
 
   grid-area: title;
 
   h1 {
-    font-size: 12px;
+    font-size: 18px;
   }
 `;
 
-export const Question = styled.div`
+export const Descriptor = styled.div`
   grid-area: question;
-  font-size: 12px;
-  margin-top:auto;
+  font-size: 25px;
 `;
 
-export const Identification = styled.div`
+export const ClassNumber = styled.div`
   grid-area: id;
+  font-size: 25px;
   margin-left: auto;
-`;
-
-export const Status = styled.div`
-  width: 20px;
-  height: 20px;
-
-  background-color:${props => props.status + 'D5'};
-
-  border-radius: 10px;
-
-  margin-top: auto;
-  margin-left: auto;
-
-  grid-area: status;
 `;
 
 export const Add = styled.button`

@@ -23,5 +23,5 @@ export const Container = styled.div`
 export const Content = styled.div`
   color: #acacac;
 
-  height: calc(100%);
+  height: calc(100% - 49px);
 `;

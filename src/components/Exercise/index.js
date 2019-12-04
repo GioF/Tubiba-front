@@ -15,7 +15,7 @@ export default function Exercise(props) {
   }
 
   return (
-    <Overlay display={props.display}>
+    <Overlay shouldDisplay={props.shouldDisplay}>
       <Container>
         <h1>
           {props.data.title ? props.data.title : "teste"}

@@ -1,10 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { MdAdd } from 'react-icons/md';
 
-import { Container, Listing, Title, Identification, Question, Status } from './styles';
+import api from '../../services/api';
+
+import { Container, Listing, Title, Identification, Question, Status, Add } from './styles';
 import DashboardCard from '../DashboardCard';
 import Exercise from '../Exercise';
+import ExerciseForm from '../ExerciseForm';
 
 export default function ExerciseList(props) {
+
+
+  const [type, setType] = useState();
+  const [exercises, setExercises] = useState();
+
+  useEffect(() => {
+    async function getType(){
+      const _id = localStorage.getItem('user');
+      const res = await api.get('/user', {headers: {_id}});
+      setType(res.data);
+    }
+    getType();
+  }, []);
+
+  useEffect(() => {
+    async function getExercises(){
+      const _id = localStorage.getItem('user');
+      const res = await api.get('', {headers: {_id}});
+      setExercises(res.data);
+    }
+    getExercises();
+  },[]);
 
   const data = {
     title: 'Como sonegar impostos sem ser pego?',
@@ -19,18 +45,23 @@ export default function ExerciseList(props) {
     ]
   };
 
-  const [overlay, setOverlay] = useState('none');
+  const [formOverlay, setFormOverlay] = useState(true);
+  const [exerciseOverlay, setExerciseOverlay] = useState(false);
 
   return (
     <DashboardCard 
       title={
+        <>
         <p>Exercícios</p>
+        {type==='Professor' ? <Add onClick={() => setFormOverlay(!formOverlay)}><MdAdd size="15"/></Add> : <></>}
+        </>
       }
       gridArea={props.gridArea}
       >
-        <Exercise display={overlay} undo={setOverlay} data={data}/>
+        <Exercise shouldDisplay={exerciseOverlay} undo={setExerciseOverlay} data={data}/>
+        <ExerciseForm shouldDisplay={formOverlay} undo={setFormOverlay} classId={props.classId}/>
         <Listing>
-          <Container onClick={() => setOverlay(!overlay)}>
+          <Container onClick={() => setExerciseOverlay(!exerciseOverlay)}>
             <Title>
               <h1>
                 {data.title}

@@ -6,7 +6,7 @@ import Sidebar from '../../components/Sidebar';
 import Routes from './routes';
 
 export default function Dashboard({ history }) {
-  const [displayGrid, setDisplayGrid] = useState('');
+  const [displayGrid, setDisplayGrid] = useState(false);
 
   if(!(localStorage.getItem('user'))){
     history.push('/');
